@@ -3,112 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sam O'Halloran - Jazz Guitarist</title>
+    <title>Sam O'Halloran | Jazz Guitarist · Melbourne</title>
+    <meta name="description" content="Melbourne jazz guitarist Sam O'Halloran — solo guitar, gypsy swing, and classic jazz ensembles available for events and functions.">
+    <meta name="theme-color" content="#1a1a1a">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#music">Music</a></li>
-            <li><a href="#videos">Videos</a></li>
-            <li><a href="#bookings">Bookings</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+
+    <nav id="nav" aria-label="Main navigation">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">Sam O'Halloran</a>
+            <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#ensembles">Ensembles</a></li>
+                <li><a href="#contact" class="nav-cta">Book Now</a></li>
+            </ul>
+        </div>
     </nav>
 
     <main>
-        <!-- Hero Section -->
+        <section id="hero" aria-label="Introduction">
+            <div class="hero-bg" style="background-image: url('assets/images/solo-sam.jpg')" role="img" aria-label="Sam O'Halloran playing jazz guitar"></div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <p class="hero-tag">Jazz Guitarist · Melbourne</p>
+                <h1>Sam O'Halloran</h1>
+                <p class="hero-sub">Solo jazz guitar, gypsy swing, and classic ensembles for your next event.</p>
+                <div class="hero-actions">
+                    <a href="#contact" class="btn btn-primary">Request a Quote</a>
+                    <a href="#ensembles" class="btn btn-outline-light">View Ensembles</a>
+                </div>
+            </div>
+        </section>
+
         <section id="about">
-            <h1>Sam O'Halloran</h1>
-            <p class="subtitle">Jazz guitarist · Melbourne</p>
-            <p>
-                I've been chasing the sound of old strings and worn-out records for as long as I can remember. Here's what that looks like.
-            </p>
-        </section>
-
-        <!-- Music Section -->
-        <section id="music">
-            <h2>Music</h2>
-            <p style="text-align: center; color: #666; margin-bottom: 2rem;">
-                Explore my musical projects and styles
-            </p>
-            <div class="video-grid">
-                <div class="video-box">
-                    <iframe src="https://www.youtube.com/embed/DjDoOIs3oI8" allowfullscreen></iframe>
-                </div>
-                <div class="video-box">
-                    <iframe src="https://www.youtube.com/embed/1-B9Bg_nTzY" allowfullscreen></iframe>
+            <div class="section-inner">
+                <h2>About</h2>
+                <div class="about-content">
+                    <p>I've been chasing the sound of old strings and worn-out records for as long as I can remember. Influenced by the greats — Joe Pass, Herb Ellis, Django Reinhardt, Benny Goodman — I play jazz guitar across Melbourne as a soloist and with several ensembles.</p>
+                    <p>Whether it's an intimate dinner, a corporate function, or a festival stage, I bring the warmth of classic jazz and swing to every performance.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Videos Section -->
-        <section id="videos">
-            <h2>Videos</h2>
-            <p style="text-align: center; color: #666; margin-bottom: 2rem;">
-                Watch performances and music videos
-            </p>
-            <div class="video-grid">
-                <div class="video-box">
-                    <iframe src="https://www.youtube.com/embed/uPVHsRe5K2k" allowfullscreen></iframe>
+        <section id="ensembles">
+            <div class="section-inner">
+                <h2>Ensembles</h2>
+                <p class="section-subtitle">Available groups for your event</p>
+                <div class="ensemble-grid">
+                    <article class="ensemble-card">
+                        <div class="ensemble-media">
+                            <div class="video-wrap">
+                                <iframe src="https://www.youtube.com/embed/OLlL8KTVwTE" title="Solo Sam — Reflections (Monk)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <div class="ensemble-body">
+                            <h3>Solo Sam</h3>
+                            <p>Solo jazz guitar with influences of Joe Pass, Herb Ellis, Django Reinhardt and more. Perfect for intimate settings, cocktail hours, and dinners.</p>
+                        </div>
+                    </article>
+                    <article class="ensemble-card">
+                        <div class="ensemble-media">
+                            <div class="video-wrap">
+                                <iframe src="https://www.youtube.com/embed/uPVHsRe5K2k" title="Catfish — St. Louis Blues" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <div class="ensemble-body">
+                            <h3>Catfish</h3>
+                            <p>French swing in the style of Django Reinhardt. Authentic gypsy jazz that brings the energy of a Parisian jazz club to your event.</p>
+                        </div>
+                    </article>
+                    <article class="ensemble-card">
+                        <div class="ensemble-media">
+                            <div class="video-wrap">
+                                <iframe src="https://www.youtube.com/embed/YDg9e8alAC8" title="Daphne Duet — Tin Tin Deo" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <div class="ensemble-body">
+                            <h3>Daphne Duet</h3>
+                            <p>Swing clarinet and guitar duo in the style of Benny Goodman. A charming pairing that fills any room with classic swing.</p>
+                        </div>
+                    </article>
+                    <article class="ensemble-card">
+                        <div class="ensemble-media">
+                            <div class="video-wrap">
+                                <iframe src="https://www.youtube.com/embed/UZfthnT7lpw" title="The Very Good Ma'am Trio — Love Me or Leave Me" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <div class="ensemble-body">
+                            <h3>The "Very Good Ma'am" Trio</h3>
+                            <p>American swing from the 1930s and '40s. Three-piece classic standards that get people smiling and tapping their feet.</p>
+                        </div>
+                    </article>
                 </div>
-                <div class="video-box">
-                    <iframe src="https://www.youtube.com/embed/CPxwL6crc8k" allowfullscreen></iframe>
+                <div class="ensemble-more">
+                    <a href="https://www.youtube.com/user/samohalloran" target="_blank" rel="noopener noreferrer" class="btn btn-outline">More on YouTube &rarr;</a>
                 </div>
             </div>
         </section>
 
-        <!-- Bookings Section -->
-        <section id="bookings">
-            <h2>Bookings</h2>
-            <p style="text-align: center; color: #666; margin-bottom: 3rem;">
-                Available ensembles for your event
-            </p>
-            <div class="cards-grid">
-                <div class="card">
-                    <h3>Solo Sam</h3>
-                    <p>Solo jazz guitar with influences of Joe Pass, Herb Ellis, and Django Reinhardt</p>
-                </div>
-                <div class="card">
-                    <h3>Catfish</h3>
-                    <p>French swing in the style of Django Reinhardt with authentic gypsy swing</p>
-                </div>
-                <div class="card">
-                    <h3>Daphne Duet</h3>
-                    <p>Swing clarinet and guitar duo in the style of Benny Goodman</p>
-                </div>
-                <div class="card">
-                    <h3>Very Good Ma'am Trio</h3>
-                    <p>American swing from the 1930s and 1940s with classic standards</p>
-                </div>
-            </div>
-            <div class="cta-container">
-                <a href="mailto:sam.ohalloran@gmail.com?subject=Booking%20Inquiry&body=Hi%20Sam,%0A%0AI'm%20interested%20in%20booking%20one%20of%20your%20ensembles%20for%20an%20event.%0A%0AName:%0AEvent%20Date:%0AVenue/Address:%0ABand%20Preference:%0AEvent%20Type:%0ANumber%20of%20Guests:%0AStart%20Time:%0AEnd%20Time:%0A%0AAdditional%20Details:%0A%0AThank%20you!" class="cta-button">Request a Quote</a>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
         <section id="contact">
-            <h2>Get in Touch</h2>
-            <p>Interested in booking? Have questions? I'd love to hear from you.</p>
-            <a href="mailto:sam.ohalloran@gmail.com" class="contact-link">sam.ohalloran@gmail.com</a>
-            <div class="social-links">
-                <a href="https://www.youtube.com/user/samohalloran" target="_blank">YouTube</a>
-                <a href="https://www.instagram.com/ohalloransam/" target="_blank">Instagram</a>
+            <div class="section-inner contact-section">
+                <h2>Book a Band</h2>
+                <p class="section-subtitle">Interested in booking an ensemble for your event? Get in touch and I'll get back to you.</p>
+                <a href="mailto:sam.ohalloran@gmail.com?subject=Booking%20Inquiry&body=Hi%20Sam,%0A%0AI'm%20interested%20in%20booking%20one%20of%20your%20ensembles%20for%20an%20event.%0A%0AName:%0AEvent%20Date:%0AVenue/Address:%0ABand%20Preference:%0AEvent%20Type:%0ANumber%20of%20Guests:%0AStart%20Time:%0AEnd%20Time:%0A%0AAdditional%20Details:%0A%0AThank%20you!" class="btn btn-primary btn-lg">Request a Quote</a>
+                <div class="contact-details">
+                    <a href="mailto:sam.ohalloran@gmail.com">sam.ohalloran@gmail.com</a>
+                    <span class="contact-sep" aria-hidden="true">&middot;</span>
+                    <a href="https://www.youtube.com/user/samohalloran" target="_blank" rel="noopener noreferrer">YouTube</a>
+                    <span class="contact-sep" aria-hidden="true">&middot;</span>
+                    <a href="https://www.instagram.com/ohalloransam/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
     <footer>
-        <div class="social-links">
-            <a href="https://www.youtube.com/user/samohalloran" target="_blank">YouTube</a>
-            <a href="https://www.instagram.com/ohalloransam/" target="_blank">Instagram</a>
-            <a href="mailto:sam.ohalloran@gmail.com">Email</a>
+        <div class="footer-inner">
+            <span>&copy; 2026 Sam O'Halloran</span>
+            <div class="footer-links">
+                <a href="https://www.youtube.com/user/samohalloran" target="_blank" rel="noopener noreferrer">YouTube</a>
+                <a href="https://www.instagram.com/ohalloransam/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="mailto:sam.ohalloran@gmail.com">Email</a>
+            </div>
         </div>
-        <p>&copy; 2026 Sam O'Halloran. All rights reserved.</p>
     </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
