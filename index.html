@@ -31,7 +31,12 @@
 
     <main>
         <section id="hero" aria-label="Introduction">
-            <div class="hero-bg" style="background-image: url('assets/images/solo-sam.jpg')" role="img" aria-label="Sam O'Halloran playing jazz guitar"></div>
+            <div class="hero-bg" role="img" aria-label="Jazz guitar on armchair">
+                <picture>
+                    <source srcset="assets/images/hero.webp" type="image/webp">
+                    <img src="assets/images/hero.jpg" alt="" loading="eager" width="1920" height="2885">
+                </picture>
+            </div>
             <div class="hero-overlay"></div>
             <div class="hero-content">
                 <p class="hero-tag">Jazz Guitarist · Melbourne</p>
@@ -48,8 +53,16 @@
             <div class="section-inner">
                 <h2>About</h2>
                 <div class="about-content">
-                    <p>I've been chasing the sound of old strings and worn-out records for as long as I can remember. Influenced by the greats — Joe Pass, Herb Ellis, Django Reinhardt, Benny Goodman — I play jazz guitar across Melbourne as a soloist and with several ensembles.</p>
-                    <p>Whether it's an intimate dinner, a corporate function, or a festival stage, I bring the warmth of classic jazz and swing to every performance.</p>
+                    <div class="about-photo">
+                        <picture>
+                            <source srcset="assets/images/about.webp" type="image/webp">
+                            <img src="assets/images/about.jpg" alt="Sam O'Halloran performing live" loading="lazy" width="800" height="1198">
+                        </picture>
+                    </div>
+                    <div class="about-text">
+                        <p>I've been chasing the sound of old strings and worn-out records for as long as I can remember. Influenced by the greats — Joe Pass, Herb Ellis, Django Reinhardt, Benny Goodman — I play jazz guitar across Melbourne as a soloist and with several ensembles.</p>
+                        <p>Whether it's an intimate dinner, a corporate function, or a festival stage, I bring the warmth of classic jazz and swing to every performance.</p>
+                    </div>
                 </div>
             </div>
         </section>

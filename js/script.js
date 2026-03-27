@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const fadeTargets = document.querySelectorAll(
-        '.ensemble-card, .about-content, .contact-section'
+        '.ensemble-card, .about-photo, .about-text, .contact-section'
     );
 
     fadeTargets.forEach(el => el.classList.add('fade-in'));

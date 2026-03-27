@@ -205,19 +205,24 @@ nav.nav-dark .nav-toggle span {
     position: relative;
     min-height: 100vh;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     text-align: center;
-    padding: calc(var(--nav-height) + 2rem) 1.5rem 4rem;
+    padding: calc(var(--nav-height) + 3rem) 1.5rem 4rem;
     overflow: hidden;
 }
 
 .hero-bg {
     position: absolute;
     inset: 0;
-    background-size: cover;
-    background-position: center 30%;
-    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 60%;
 }
 
 .hero-overlay {
@@ -225,9 +230,10 @@ nav.nav-dark .nav-toggle span {
     inset: 0;
     background: linear-gradient(
         to bottom,
-        rgba(10, 10, 10, 0.55) 0%,
-        rgba(10, 10, 10, 0.65) 50%,
-        rgba(10, 10, 10, 0.8) 100%
+        rgba(10, 10, 10, 0.75) 0%,
+        rgba(10, 10, 10, 0.6) 40%,
+        rgba(10, 10, 10, 0.35) 70%,
+        rgba(10, 10, 10, 0.5) 100%
     );
 }
 
@@ -308,19 +314,36 @@ section h2 {
 }
 
 .about-content {
-    max-width: 640px;
-    margin: 2rem auto 0;
-    text-align: center;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 3rem;
+    align-items: center;
+    margin-top: 2rem;
 }
 
-.about-content p {
+.about-photo {
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.about-photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.about-text {
+    max-width: 560px;
+}
+
+.about-text p {
     color: var(--color-text-muted);
     font-size: 1.05rem;
     line-height: 1.8;
     margin-bottom: 1rem;
 }
 
-.about-content p:last-child {
+.about-text p:last-child {
     margin-bottom: 0;
 }
 
@@ -584,11 +607,21 @@ nav.nav-dark :focus-visible {
 
     #hero {
         min-height: 85vh;
-        padding-top: calc(var(--nav-height) + 3rem);
+        padding-top: calc(var(--nav-height) + 4rem);
     }
 
     section {
         padding: 4rem 1.25rem;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .about-photo {
+        max-width: 260px;
+        margin: 0 auto;
     }
 
     .ensemble-grid {
