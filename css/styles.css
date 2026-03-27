@@ -117,7 +117,7 @@ nav.nav-dark .nav-toggle span {
     color: var(--color-text);
 }
 
-.nav-links a.active {
+.nav-links a.active:not(.nav-cta) {
     color: var(--color-text);
 }
 
@@ -129,7 +129,7 @@ nav.nav-dark .nav-toggle span {
     margin-top: 2px;
 }
 
-nav.nav-dark .nav-links a.active {
+nav.nav-dark .nav-links a.active:not(.nav-cta) {
     color: #fff;
 }
 
@@ -143,6 +143,14 @@ nav.nav-dark .nav-links a.active {
 .nav-links .nav-cta:hover {
     background: var(--color-accent-hover);
     color: #fff;
+}
+
+.nav-links .nav-cta.active {
+    box-shadow: 0 0 0 2px var(--color-bg), 0 0 0 3.5px var(--color-accent);
+}
+
+nav.nav-dark .nav-links .nav-cta.active {
+    box-shadow: 0 0 0 2px rgba(20, 20, 20, 0.85), 0 0 0 3.5px #fff;
 }
 
 .nav-toggle {

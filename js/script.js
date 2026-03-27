@@ -67,37 +67,56 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
     let scrollingFromClick = false;
 
+    const setActiveNav = (id) => {
+        navLinks.forEach(link => {
+            const isMatch = link.getAttribute('href') === `#${id}`;
+            link.classList.toggle('active', isMatch);
+        });
+    };
+
     navAnchors.forEach(anchor => {
         anchor.addEventListener('click', () => {
             scrollingFromClick = true;
-            setTimeout(() => { scrollingFromClick = false; }, 1000);
+            const href = anchor.getAttribute('href');
+            if (href && href.startsWith('#')) {
+                setActiveNav(href.slice(1));
+            }
+            setTimeout(() => { scrollingFromClick = false; }, 1200);
         });
     });
 
-    if ('IntersectionObserver' in window) {
-        const sectionObserver = new IntersectionObserver(
-            entries => {
-                if (scrollingFromClick) return;
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const id = entry.target.id;
-                        const hash = id === 'hero' ? '' : `#${id}`;
+    let scrollTicking = false;
+    const updateActiveSection = () => {
+        if (scrollingFromClick) return;
+        const atBottom = (window.innerHeight + window.scrollY) >= (document.body.scrollHeight - 50);
+        let current = '';
+        if (atBottom && sections.length) {
+            current = sections[sections.length - 1].id;
+        } else {
+            const offset = window.scrollY + nav.offsetHeight + 80;
+            sections.forEach(section => {
+                if (section.offsetTop <= offset) {
+                    current = section.id;
+                }
+            });
+        }
+        const hash = current === 'hero' || !current ? '' : `#${current}`;
+        if (window.location.hash !== hash) {
+            history.replaceState(null, '', hash || window.location.pathname);
+        }
+        setActiveNav(current);
+    };
 
-                        if (window.location.hash !== hash) {
-                            history.replaceState(null, '', hash || window.location.pathname);
-                        }
-
-                        navLinks.forEach(link => {
-                            const isMatch = link.getAttribute('href') === `#${id}`;
-                            link.classList.toggle('active', isMatch);
-                        });
-                    }
-                });
-            },
-            { threshold: 0.3, rootMargin: '-10% 0px -60% 0px' }
-        );
-        sections.forEach(s => sectionObserver.observe(s));
-    }
+    window.addEventListener('scroll', () => {
+        if (!scrollTicking) {
+            requestAnimationFrame(() => {
+                updateActiveSection();
+                scrollTicking = false;
+            });
+            scrollTicking = true;
+        }
+    }, { passive: true });
+    updateActiveSection();
 
     // ---- STAGGERED FADE-INS ----
 
