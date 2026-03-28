@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const activate = () => {
             const id = facade.dataset.id;
             const iframe = document.createElement('iframe');
-            iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1`;
+            iframe.src = `https://www.youtube.com/embed/${id}?autoplay=1`;
             iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
             iframe.allowFullscreen = true;
             facade.innerHTML = '';
