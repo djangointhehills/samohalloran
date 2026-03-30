@@ -39,7 +39,17 @@ document.addEventListener('DOMContentLoaded', () => {
     // ---- YOUTUBE FACADE ----
 
     document.querySelectorAll('.video-facade').forEach(facade => {
+        const originalHTML = facade.innerHTML;
         const activate = () => {
+            document.querySelectorAll('.video-wrap iframe').forEach(iframe => {
+                const wrap = iframe.closest('.video-wrap');
+                wrap.innerHTML = wrap._originalHTML;
+                wrap.classList.add('video-facade');
+                wrap.setAttribute('role', 'button');
+                wrap.setAttribute('tabindex', '0');
+                wrap.style.cursor = '';
+            });
+            facade._originalHTML = originalHTML;
             const id = facade.dataset.id;
             const iframe = document.createElement('iframe');
             iframe.src = `https://www.youtube.com/embed/${id}?autoplay=1`;
