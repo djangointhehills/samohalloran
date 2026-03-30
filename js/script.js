@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const hero = document.getElementById('hero');
     const heroBg = document.querySelector('.hero-bg img');
 
+    const supportsScrollTimeline = CSS.supports('animation-timeline', 'view()');
+
     // ---- NAV APPEARANCE ----
 
     const updateNav = () => {
@@ -129,34 +131,42 @@ document.addEventListener('DOMContentLoaded', () => {
     updateActiveSection();
 
     // ---- STAGGERED FADE-INS ----
+    // When CSS scroll-driven animations are supported, the CSS handles
+    // the reveal animation via animation-timeline: view(). We still add
+    // the .fade-in class so the CSS selector matches. When not supported,
+    // we fall back to IntersectionObserver toggling .visible.
 
     const fadeTargets = document.querySelectorAll(
-        '.ensemble-card, .about-photo, .about-text, .contact-section'
+        '.ensemble-card, .about-photo, .about-text, .contact-section, section h2, .section-subtitle'
     );
 
     fadeTargets.forEach((el, i) => {
         el.classList.add('fade-in');
-        const isCard = el.classList.contains('ensemble-card');
-        if (isCard) {
-            el.style.transitionDelay = `${(i % 2) * 0.12}s`;
+        if (!supportsScrollTimeline) {
+            const isCard = el.classList.contains('ensemble-card');
+            if (isCard) {
+                el.style.transitionDelay = `${(i % 2) * 0.12}s`;
+            }
         }
     });
 
-    if ('IntersectionObserver' in window) {
-        const fadeObserver = new IntersectionObserver(
-            entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        fadeObserver.unobserve(entry.target);
-                    }
-                });
-            },
-            { threshold: 0.15, rootMargin: '0px 0px -40px 0px' }
-        );
-        fadeTargets.forEach(el => fadeObserver.observe(el));
-    } else {
-        fadeTargets.forEach(el => el.classList.add('visible'));
+    if (!supportsScrollTimeline) {
+        if ('IntersectionObserver' in window) {
+            const fadeObserver = new IntersectionObserver(
+                entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            fadeObserver.unobserve(entry.target);
+                        }
+                    });
+                },
+                { threshold: 0.15, rootMargin: '0px 0px -40px 0px' }
+            );
+            fadeTargets.forEach(el => fadeObserver.observe(el));
+        } else {
+            fadeTargets.forEach(el => el.classList.add('visible'));
+        }
     }
 
     // ---- HERO PARALLAX ----
