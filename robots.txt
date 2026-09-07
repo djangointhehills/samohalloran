@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://samohalloran.com/sitemap.xml
